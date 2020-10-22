@@ -7,6 +7,9 @@
 	objects = {
 
 /* Begin PBXBuildFile section */
+		0943613D25407673009811AC /* CatTableViewCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = 0943613B25407673009811AC /* CatTableViewCell.swift */; };
+		0943613E25407673009811AC /* CatTableViewCell.xib in Resources */ = {isa = PBXBuildFile; fileRef = 0943613C25407673009811AC /* CatTableViewCell.xib */; };
+		0943614325408504009811AC /* Movies.swift in Sources */ = {isa = PBXBuildFile; fileRef = 0943614225408504009811AC /* Movies.swift */; };
 		09643BDD254039580014C656 /* AppDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = 09643BDC254039580014C656 /* AppDelegate.swift */; };
 		09643BDF254039580014C656 /* SceneDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = 09643BDE254039580014C656 /* SceneDelegate.swift */; };
 		09643BE1254039580014C656 /* ViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 09643BE0254039580014C656 /* ViewController.swift */; };
@@ -15,6 +18,9 @@
 		09643BE92540395B0014C656 /* LaunchScreen.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = 09643BE72540395B0014C656 /* LaunchScreen.storyboard */; };
 		09643BF42540395B0014C656 /* myFirstAppTests.swift in Sources */ = {isa = PBXBuildFile; fileRef = 09643BF32540395B0014C656 /* myFirstAppTests.swift */; };
 		09643BFF2540395C0014C656 /* myFirstAppUITests.swift in Sources */ = {isa = PBXBuildFile; fileRef = 09643BFE2540395C0014C656 /* myFirstAppUITests.swift */; };
+		09A5A89225416B4600365BA4 /* MovieTableViewCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = 09A5A89025416B4600365BA4 /* MovieTableViewCell.swift */; };
+		09A5A89325416B4600365BA4 /* MovieTableViewCell.xib in Resources */ = {isa = PBXBuildFile; fileRef = 09A5A89125416B4600365BA4 /* MovieTableViewCell.xib */; };
+		09A5A8982541823F00365BA4 /* MovieObject.swift in Sources */ = {isa = PBXBuildFile; fileRef = 09A5A8972541823F00365BA4 /* MovieObject.swift */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXContainerItemProxy section */
@@ -35,6 +41,9 @@
 /* End PBXContainerItemProxy section */
 
 /* Begin PBXFileReference section */
+		0943613B25407673009811AC /* CatTableViewCell.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = CatTableViewCell.swift; sourceTree = "<group>"; };
+		0943613C25407673009811AC /* CatTableViewCell.xib */ = {isa = PBXFileReference; lastKnownFileType = file.xib; path = CatTableViewCell.xib; sourceTree = "<group>"; };
+		0943614225408504009811AC /* Movies.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Movies.swift; sourceTree = "<group>"; };
 		09643BD9254039580014C656 /* myFirstApp.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = myFirstApp.app; sourceTree = BUILT_PRODUCTS_DIR; };
 		09643BDC254039580014C656 /* AppDelegate.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AppDelegate.swift; sourceTree = "<group>"; };
 		09643BDE254039580014C656 /* SceneDelegate.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SceneDelegate.swift; sourceTree = "<group>"; };
@@ -49,6 +58,9 @@
 		09643BFA2540395B0014C656 /* myFirstAppUITests.xctest */ = {isa = PBXFileReference; explicitFileType = wrapper.cfbundle; includeInIndex = 0; path = myFirstAppUITests.xctest; sourceTree = BUILT_PRODUCTS_DIR; };
 		09643BFE2540395C0014C656 /* myFirstAppUITests.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = myFirstAppUITests.swift; sourceTree = "<group>"; };
 		09643C002540395C0014C656 /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
+		09A5A89025416B4600365BA4 /* MovieTableViewCell.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = MovieTableViewCell.swift; sourceTree = "<group>"; };
+		09A5A89125416B4600365BA4 /* MovieTableViewCell.xib */ = {isa = PBXFileReference; lastKnownFileType = file.xib; path = MovieTableViewCell.xib; sourceTree = "<group>"; };
+		09A5A8972541823F00365BA4 /* MovieObject.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = MovieObject.swift; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -102,7 +114,13 @@
 				09643BDC254039580014C656 /* AppDelegate.swift */,
 				09643BDE254039580014C656 /* SceneDelegate.swift */,
 				09643BE0254039580014C656 /* ViewController.swift */,
+				0943614225408504009811AC /* Movies.swift */,
+				09A5A8972541823F00365BA4 /* MovieObject.swift */,
 				09643BE2254039580014C656 /* Main.storyboard */,
+				0943613B25407673009811AC /* CatTableViewCell.swift */,
+				0943613C25407673009811AC /* CatTableViewCell.xib */,
+				09A5A89025416B4600365BA4 /* MovieTableViewCell.swift */,
+				09A5A89125416B4600365BA4 /* MovieTableViewCell.xib */,
 				09643BE52540395B0014C656 /* Assets.xcassets */,
 				09643BE72540395B0014C656 /* LaunchScreen.storyboard */,
 				09643BEA2540395B0014C656 /* Info.plist */,
@@ -231,6 +249,8 @@
 			isa = PBXResourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
+				0943613E25407673009811AC /* CatTableViewCell.xib in Resources */,
+				09A5A89325416B4600365BA4 /* MovieTableViewCell.xib in Resources */,
 				09643BE92540395B0014C656 /* LaunchScreen.storyboard in Resources */,
 				09643BE62540395B0014C656 /* Assets.xcassets in Resources */,
 				09643BE4254039580014C656 /* Main.storyboard in Resources */,
@@ -258,8 +278,12 @@
 			isa = PBXSourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
+				0943614325408504009811AC /* Movies.swift in Sources */,
+				0943613D25407673009811AC /* CatTableViewCell.swift in Sources */,
+				09A5A89225416B4600365BA4 /* MovieTableViewCell.swift in Sources */,
 				09643BE1254039580014C656 /* ViewController.swift in Sources */,
 				09643BDD254039580014C656 /* AppDelegate.swift in Sources */,
+				09A5A8982541823F00365BA4 /* MovieObject.swift in Sources */,
 				09643BDF254039580014C656 /* SceneDelegate.swift in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;

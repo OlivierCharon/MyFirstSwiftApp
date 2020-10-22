@@ -8,7 +8,8 @@
 import UIKit
 
 class CatTableViewCell: UITableViewCell {
-
+    @IBOutlet weak var myCatLabel: UILabel!
+    
     override func awakeFromNib() {
         super.awakeFromNib()
         // Initialization code
