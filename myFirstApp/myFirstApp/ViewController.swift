@@ -11,11 +11,15 @@ class ViewController: UIViewController, UITableViewDelegate, UITableViewDataSour
     
     var movies: Array<MovieObject> = []
     var searchParameter = ""
+    
     @IBOutlet weak var generalTabView: UITableView!
     
     @IBOutlet weak var searchTextField: UITextField!
     
+    @IBOutlet weak var refreshButton: UIButton!
+    
     func loadMovies(){
+        print("load movies")
         if let url = URL(string: "https://www.omdbapi.com/?s="+self.searchParameter+"&apikey=e238f827"){
             URLSession.shared.dataTask(with: url) { data, response, error in
                 
@@ -58,34 +62,12 @@ class ViewController: UIViewController, UITableViewDelegate, UITableViewDataSour
         self.generalTabView.delegate = self
         self.generalTabView.dataSource = self
         
-        
         self.searchTextField.becomeFirstResponder()
         self.generalTabView.register(UINib(nibName: "MovieTableViewCell", bundle: nil), forCellReuseIdentifier: "MovieTableViewCell")
         
+        refreshButton.setImage( UIImage.init(named: "refresh"), for: .normal)
+        
         self.loadMovies()
-        
-            
-        
-//            let search = UISearchController(searchResultsController: nil)
-//            search.searchResultsUpdater = self
-//            search.obscuresBackgroundDuringPresentation = false
-//            search.searchBar.placeholder = "Search"
-//            navigationItem.searchController = search
-//
-//            func updateSearchResults(for searchController: UISearchController) {
-//                guard let text = searchController.searchBar.text else { return }
-//                    print(text)
-//            }
-            
-//            func searchBar(searchBar: UISearchBar, textDidChange searchText: String) {
-//                print("searchText \(searchText)")
-//            }
-//
-//            func searchBarSearchButtonClicked(searchBar: UISearchBar) {
-//                print("searchText \(searchBar.text ?? "Game")")
-//            }
-        
-        
     }
     
     func tableView(_ tableView: UITableView, numberOfRowsInSection section: Int) -> Int {
@@ -97,7 +79,7 @@ class ViewController: UIViewController, UITableViewDelegate, UITableViewDataSour
     }
     
     func tableView(_ tableView: UITableView, cellForRowAt indexPath: IndexPath) -> UITableViewCell {
-        print(self.movies.count)
+        
         if self.movies.count > 0 {
             if let myCell = self.generalTabView.dequeueReusableCell(withIdentifier: "MovieTableViewCell") as? MovieTableViewCell{
                 if let posterURL = URL(string: self.movies[indexPath.row].poster) {
@@ -140,29 +122,7 @@ class ViewController: UIViewController, UITableViewDelegate, UITableViewDataSour
                 myCell.myMovieLabel.numberOfLines=0
                 myCell.myMovieLabel.lineBreakMode = NSLineBreakMode.byWordWrapping
                 
-                if let posterURL = URL(string: "https://images.squarespace-cdn.com/content/v1/5654cf16e4b00b463710ff91/1448509700695-K742MSNI6DLI2EY5JF08/ke17ZwdGBToddI8pDm48kB2JJdSYG6qtFuh5yOgSivBZw-zPPgdn4jUwVcJE1ZvWQUxwkmyExglNqGp0IvTJZUJFbgE-7XRK3dMEBRBhUpw0EQiLagPECDCjHyhXWG6-myvgGXeIWUf4NL6h1C1LKA1Zgs3q42RTRGNGvbZJ9fs/image-asset.png") {
-                    do {
-                        DispatchQueue.global().async {
-                            do {
-                                let posterData = try Data(contentsOf: posterURL)
-                                let posterImage: UIImage? = UIImage(data: posterData)
-                                    DispatchQueue.main.async {
-                                        myCell.myMoviePoster.image = posterImage
-                                    }
-                            } catch DecodingError.dataCorrupted {
-                                print("error = dataCorrupted")
-                            } catch DecodingError.keyNotFound {
-                                print("error = keyNotFound")
-                            } catch DecodingError.typeMismatch {
-                                print("error = typeMismatch")
-                            } catch DecodingError.valueNotFound {
-                                print("error = valueNotFound")
-                            } catch {
-                                print("error")
-                            }
-                        }
-                    }
-                }
+                myCell.myMoviePoster.image = #imageLiteral(resourceName: "three_dots")
                 
                 myCell.myMovieLabel.text = "Il n'y a aucun film à afficher. Vous pouvez effectuer votre recherche en haut de l'écran"
                 return myCell
@@ -170,6 +130,7 @@ class ViewController: UIViewController, UITableViewDelegate, UITableViewDataSour
         }
         return UITableViewCell()
     }
+    
     @IBAction func searchAction(_ sender: UITextField) {
         self.searchParameter = sender.text ?? ""
         self.loadMovies()
@@ -179,9 +140,11 @@ class ViewController: UIViewController, UITableViewDelegate, UITableViewDataSour
         self.searchParameter = sender.text ?? ""
         self.loadMovies()
     }
+    
+    @IBAction func refreshActionTouchDown(_ sender: UIButton) {
+        self.loadMovies()
+    }
 }
-
-
 
 extension UIColor {
    convenience init(red: Int, green: Int, blue: Int) {
